@@ -84,8 +84,12 @@ public class runIndexing {
          * @TODO implement
          * @TODO in a comment, give 5 examples (made up by yourself) of different types
          *       of character sequences that will be handled inappropriately by this
-         *       simple tokenization algorithm 1) Little-Town 2) China-Virus 3) Covid-19
-         *       4) New York City 5) Country's
+         *       simple tokenization algorithm 
+         *       1) Little-Town 
+         *       2) China-Virus 
+         *       3) Covid-19
+         *       4) New York City 
+         *       5) Country's
          */
         // Instantiate list of tokens
         ArrayList<String> tokens = new ArrayList<String>();
@@ -108,8 +112,12 @@ public class runIndexing {
          * @TODO in a comment, give 5 examples (made up by yourself) of token pairs that
          *       might be normalized and treated as the same (5 different types of
          *       differences between the tokens in the pairs) but are treated as
-         *       distinct by this simple normalization algorithm 1) [woman, women] 2)
-         *       [talk, talked] 3) [got, gotten] 4) [leave, left] 5) [child, children]
+         *       distinct by this simple normalization algorithm 
+         *       1) [Woman, Women] 
+         *       2) [Talk, Talked]
+         *       3) [got, gotten]
+         *       4) [leave, left]
+         *       5) [child, children]
          */
 
         ArrayList<String> normalized = new ArrayList<>();
@@ -348,6 +356,7 @@ public class runIndexing {
             dot_product_value.put(index, dotProduct(query_vector, doc_row));
             index++;
         }
+
         // Sort dot_product mapping by the value
         dot_product_value = sortByValue(dot_product_value);
         // Do another pass and fill return array upto k document or non zero weights
@@ -360,7 +369,6 @@ public class runIndexing {
                 break;
             }
         }
-
         // Convert arraylist to primitive int array for return value match
         return retList.stream().mapToInt(i -> i).toArray();
     }
